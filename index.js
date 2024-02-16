@@ -72,6 +72,7 @@ app.post("/api/send/email", async (req, res) => {
     }); // Send response to the client-side
   } catch (err) {
     console.log(err); // throws an error message if any
+    return res.status(500).json({ error: err.message });
   }
 });
 
